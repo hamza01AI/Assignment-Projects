@@ -2,7 +2,7 @@
 using namespace std;
 #include <iomanip> 
 int main(){
-//initializing
+//declaration
 float num1;
 float num2;
 cout<<" Enter Number 1:"<<endl;
@@ -19,7 +19,7 @@ float prod = num1 * num2;
 cout<<" The Product of Two Numbers is: "<<prod<<endl;
 float div = num1 / num2;
 cout<<" The Division of Two Numbers is: "<<div<<endl;
-// Output is displayed in the same data type as input
+// Output is displayed in the same data type as input with 3 decimal places
 
 //Explicit Type Casting will convert it to Integer and display results in "int" data type
 cout<<endl;
