@@ -1,18 +1,18 @@
 #include <iostream>
-#include <string.h>
+#include <string.h> // to use arrays
 #include <string>
-#include <iomanip>
+#include <iomanip> // for using of formatting functions
 using namespace std;
 int main(){
 //declaration
 
-string sub[5];
-float num_obt[5];
-float per[6];
-int marks_total[5];
-string  grad[6];
-float total_obt = 0;
-int total = 0;
+string sub[5];//string to store subject name
+float num_obt[5];//float data type to store obtained marks even in decimals 
+float per[6];//array to percentage values in floating point
+int marks_total[5];//total subject marks
+string  grad[6]; // string to store grades ^char is not used because of grade "A+""
+float total_obt = 0;// total obtained marks
+int total = 0;//total marks 
 
 //Input using getline command to get multi word input
 // loop  is used to take input of both subject name and marks
@@ -22,7 +22,7 @@ for(int i = 0;  i<5; i++) {
 
 	cout << "Enter Subject " << i+1 << " Name: ";
    
-	getline(cin,sub[i]);
+	getline(cin,sub[i]);//to take multi word input
     cout<<"Enter Total Marks: ";
     cin>>marks_total[i];
      cout<< "Enter Obtained Marks: ";
@@ -38,8 +38,8 @@ for(int i = 0;  i<5; i++) {
 //Percantage calculation Using loop and Grade Determination
 
 for(int x = 0; x < 5; x++){ 
-total_obt = total_obt+ num_obt[x];
-total = total + marks_total[x];
+total_obt = total_obt+ num_obt[x];//total and Obtained marks are calculated simulataneously 
+total = total + marks_total[x];//
 per[x] = (num_obt[x] / marks_total[x]) * 100;
 if(per[x]>90)
 {
@@ -76,7 +76,7 @@ else grad[x]="F";
 
 
 
-
+//Proper formatting for the display of result using typecasting 
 cout<<"---------------------------------------------------------------"<<endl;
 cout<<"| " <<left<< setw(30)<< "Subject Name"
 <<"| "<<setw(15)<<"Total Marks"
@@ -89,7 +89,7 @@ for(int j = 0; j<5; j++)
 cout<<"| "<<left<<setw(30 )<< sub[j]
 <<"| " <<setw(15)<<marks_total[j]
 <<"| " <<setw(15)<<fixed<<setprecision(0)<< num_obt[j]
-<<"| " <<setw(12)<<fixed<<setprecision(1)<<per[j]
+<<"| " <<setw(12)<<fixed<<setprecision(1)<<per[j] // setprecion was used along with fixed to define decimals values
 
 <<"| " <<setw(5) <<grad[j]<<endl;
 cout<<"--------------------------------------------------------------------------------------------------"<<endl;
@@ -106,9 +106,9 @@ cout<<endl;
 
 cout<<"--------------------------------------------------------------------------------------------------"<<endl;
 
-if(per[5]<59)cout<<"You Are Fail";
+if(per[5]<59)cout<<"Work harder next time,You Are Fail";
 
-else cout<<"You Are Pass";
+else cout<<"Congratulations,You Are Pass";
 
 
 
