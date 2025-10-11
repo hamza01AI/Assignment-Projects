@@ -76,7 +76,7 @@ else grad[x]="F";
 
 
 
-//Proper formatting for the display of result using typecasting 
+//Proper formatting for the display of result using formatting functions
 cout<<"---------------------------------------------------------------"<<endl;
 cout<<"| " <<left<< setw(30)<< "Subject Name"
 <<"| "<<setw(15)<<"Total Marks"
