@@ -89,7 +89,7 @@ for(int j = 0; j<5; j++)
 cout<<"| "<<left<<setw(30 )<< sub[j]
 <<"| " <<setw(15)<<marks_total[j]
 <<"| " <<setw(15)<<fixed<<setprecision(0)<< num_obt[j]
-<<"| " <<setw(12)<<fixed<<setprecision(1)<<per[j] // setprecion was used along with fixed to define decimals values
+<<"| " <<setw(12)<<fixed<<setprecision(1)<<per[j] // setprecion was used along with fixed to define decimals values for percentage
 
 <<"| " <<setw(5) <<grad[j]<<endl;
 cout<<"--------------------------------------------------------------------------------------------------"<<endl;
