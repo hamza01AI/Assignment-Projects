@@ -61,7 +61,7 @@ void slotnumber(){
     board[row][col]=currentmarker;
     currentplayer++;
     
-    displayboard();
+    
    
 }
     
@@ -97,10 +97,12 @@ return true;
 //Game Function in which the game will run
 void game()
 {
+
     while(true){
 
     displayboard();
     cout<<endl<<endl;;
+ 
      cout<<"Player "<<((currentplayer%2==1)?1:2)<<" Turn "<<endl;
     slotnumber();
     cout<<endl;
