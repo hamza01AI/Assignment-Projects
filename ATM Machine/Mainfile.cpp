@@ -5,14 +5,7 @@ using namespace std;
 int balance=20000; // global variable
 int usernumber;
 
-void userselect()
-{
-cout<<"Select Your Account";
-cout<<"1: Hamza /n 2: Abdul Hannan";
-cin>>usernumber;
 
-
-}
 
 void checkbalance(){
 
