@@ -17,6 +17,7 @@ void withdraw()
 {
 int x;
 int y; 
+
 cout<<"1. Fast Cash           2. Withdraw"<<endl;
 cin>>x;
 if(x==1)
