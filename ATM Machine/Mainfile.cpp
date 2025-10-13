@@ -58,7 +58,7 @@ else if(x==2)
     if(y>balance){cout<<"You dont have enough balance, Enter Money again"<<endl;
     continue;}
     cout<<"Your balance is :"<<balance-y;
-    break;s
+    break;
 }}
 
 
