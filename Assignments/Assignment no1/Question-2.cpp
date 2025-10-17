@@ -67,7 +67,7 @@ else grad[x]="F";
 //Condition For Calculation Of Grade Of Total Marks
 
    per[5] = (total_obt * 100.0) / total;
-    if(per[5] > 90) grad[5] = "A+";
+    if(per[5] >= 90) grad[5] = "A+";
     else if(per[5] > 89) grad[5] = "A";
     else if(per[5] > 79) grad[5] = "B";
     else if(per[5] > 69) grad[5] = "C";

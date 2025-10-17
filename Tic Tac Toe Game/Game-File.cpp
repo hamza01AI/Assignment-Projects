@@ -5,7 +5,7 @@
 using namespace std;
 
 //Global variables
-char board[3][3]={{'1','2','3'}, {'4','5','6'},{'7','8','9'}};
+char board[3][3]={{'1','2','3'}, {'4','5','6'},{'7','8','9'}}; //2d Array
 int currentplayer = 1;
 char currentmarker = 'X';
 
@@ -106,6 +106,7 @@ void game()
      cout<<"Player "<<((currentplayer%2==1)?1:2)<<" Turn "<<endl;
     slotnumber();
     cout<<endl;
+    cout<<"-------------------------------"<<endl;
     if(checkwin(board, currentmarker)){
         cout<<"Player "<<((currentplayer%2==1)?2:1)<<" Has Won";
         break ;
@@ -116,24 +117,6 @@ void game()
    }
 }
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Main Function
 int main()
@@ -143,7 +126,7 @@ cout<<"----TIC TAC TOE----\n";
 cout<<"Press Enter To Start The Game \n";
 cin.ignore(); // Takes A blank space as input from user 
 cout<<"Player 1 Marker is : X \n";
-cout<<"Player 2 Makrer is : O \n";
+cout<<"Player 2 Marker is : O \n";
 cout<<endl;
 game();
 }
