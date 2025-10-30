@@ -23,7 +23,7 @@ cout<<" ";
    for(int j=0;j<3;j++){ //loop for columns 
     
    cout<<board[i][j];
-   if(j<2)cout<<" | ";
+   cout<<" | ";
 }
 cout<<endl;
    if (i<2)cout<<"----------"<<endl;
