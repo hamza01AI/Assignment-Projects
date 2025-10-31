@@ -1,0 +1,22 @@
+# Ignore compiled files
+*.exe
+*.obj
+*.o
+*.out
+
+# Ignore build folders
+/build/
+/bin/
+/Debug/
+/Release/
+
+# Ignore IDE files (Visual Studio, CodeBlocks, etc.)
+.vscode/
+*.suo
+*.user
+*.vcxproj
+*.sln
+
+# Ignore temporary files
+*.log
+*.tmp
