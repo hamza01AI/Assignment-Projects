@@ -5,7 +5,39 @@ using namespace std;
 int balance=20000; // global variable
 int usernumber;
 
+void inputdata(string name[100], int password[100] )
+{
+    int n=0;
+    bool istrue=true;
+    while(istrue)
+    {
+        cout<<"Enter Account Holder Name"<<endl;
+        getline(cin,name[n]);
+        cout<<"Enter Numeric pin";
+        cin>>password[n];
 
+        cout<<"Enter anpther username";
+        int choice;
+        cin>>choice;
+        
+        switch(choice)
+        {
+            case:1 
+        
+            istrue=false;
+            break;
+
+            case
+        
+
+        }
+
+
+
+    }
+
+
+}
 
 void checkbalance(){
 
@@ -18,7 +50,7 @@ void withdraw()
 int x;
 int y; 
 
-cout<<"1. Fast Cash           2. Withdraw"<<endl;
+cout<<"1. Fast Cash           2. Enter Amount"<<endl;
 cin>>x;
 if(x==1)
 {
