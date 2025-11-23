@@ -64,7 +64,7 @@ void menu() {
     while (istrue) {
         cout << "1. Add Digits\n2. Count Digits\n3. Check Even & Odd\n4. Check For Prime\n5. Exit" << endl;
         cout << "Choose An Option: ";
-        cin >> g ;
+        cin >> g;
     
      // int x;
      // cout << "Enter Number: ";

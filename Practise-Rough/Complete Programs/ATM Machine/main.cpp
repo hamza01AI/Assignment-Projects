@@ -2,11 +2,13 @@
 #include <cstdlib>
 using namespace std;
 
+// Gloabal Variables
 string name[100];
 int password[100];
 int balance[100];
 
 
+// To Store Data Of The account holders
 void inputdata( )
 {
     int n=0;
@@ -15,16 +17,20 @@ void inputdata( )
     while(istrue)
     {
         cout<<"Enter Account Holder Name"<<endl;
+    
         getline(cin,name[n]);
         cout<<"Enter Numeric pin"<<endl;
         cin>>password[n];
+        
         cout<<"Enter The Current Balance Of this Account Holder"<<endl;
         cin>>balance[n];
+       
 
 
-        cout<<"Enter another username \n 1.Yes    2.NO";
+        cout<<"Enter another username \n 1.Yes    2.NO"<<endl;
         
         cin>>choice;
+         
         
         switch(choice)
         {
@@ -36,6 +42,7 @@ void inputdata( )
             case 2:
             istrue=false;
             break;
+
          }
 
 
@@ -44,46 +51,26 @@ void inputdata( )
 
 
 }
-int accountselect()
-{   string input;
-    cout<<"Enter Account Holder Name: "<<endl;
-    getline(cin,input);
-    for(int i=0; i<=1000;i++)
-    {
-        if (input==name[i])
-        {
-         return i;
-        }
-    }
-}
 
-int passwrd()
+//UI BACKEND
+
+//To get Username 
+int input()
 {
-    int x= accountselect();
-    int j;
-    cout<<"Enter Your Pin: "<<endl;
-    cin>>j;
-     while(j!=password[x])
-        {
-            cout<<"Wrong Pin Entered, Enter Password Again: "<<endl;;
-            cin>>j;
-        }
-    if(j==password[x])
-    {
-    return x;
-    }
     
 }
 
-void checkbalance(){
-int x=passwrd();
-cout<<"This Is Your Current Balance : "<<balance[x];
 
+// Check Balance function
+void checkbalance(int n){
+
+cout<<"This Is Your Current Balance : "<<balance[n];
 }
 
-void withdraw()
+//Withdraw Funtion
+void withdraw(int n)
 {
-int j=passwrd();    
+   
 int x;
 int y; 
 
@@ -102,23 +89,23 @@ cin>>choice;
 switch(choice-1){
     
     case 0:
-    balance[j]= balance[j]-1000;
-    cout<<"Your balance is  "<<balance;
+    balance[n]= balance[n]-1000;
+    cout<<"Your balance is  "<<balance[n];
     break;
     
     case 2:
-    balance[j]= balance[j]-5000;
-    cout<<"Your balance is  "<<balance[j];
+    balance[n]= balance[n]-5000;
+    cout<<"Your balance is  "<<balance[n];
     break;
 
     case 3:
-    balance[j]= balance[j]-10000;
-    cout<<"Your balance is  "<<balance[j];
+    balance[n]= balance[n]-10000;
+    cout<<"Your balance is  "<<balance[n];
     break;
 
     case 4:
-    balance[j]= balance[j]-15000;
-    cout<<"Your balance is  "<<balance;
+    balance[n]= balance[n]-15000;
+    cout<<"Your balance is  "<<balance[n];
     break;
 }
 }
@@ -126,34 +113,34 @@ else if(x==2)
 {   while(true){
     cout<<"Enter the amount of money you want to withdraw :"<<endl;
     cin>>y;
-    if(y>balance[j]){cout<<"You dont have enough balance, Enter Money again"<<endl;
+    if(y>balance[n]){cout<<"You dont have enough balance, Enter Money again"<<endl;
     continue;}
-    balance[j]= balance[j]-y;
-    cout<<"Your balance is :"<<balance[j];
+    balance[n]= balance[n]-y;
+    cout<<"Your balance is :"<<balance[n];
     break;
 }}
-
-
-
-//balance = balance - money;
-
-
-
 }
 
 
+//Main Funtion
 
 int main()
 {
-system("cls");
-cout<<"-----WELCOME TO ABC ATM MACHINE-----"<<endl;
+    system("cls");
+    cout<<"ABC BANK Data Entry"<<endl<<endl;
+    inputdata();
+    cout<<"Your Data is successfully Updated In the directory"<<endl;
+    while(true)
+    {
+    system("cls");
+    cout<<"----------ABC BANK ATM MACHINE----------"<<endl<<endl;
+    int x= accountselect();
 
-inputdata();
-
-while(true){
+    while(true){
 cout<<"1. Check Balance         2. Withdraw Money"<<endl;
 int select;
 cin>>select;
+
 
 
 
@@ -164,11 +151,11 @@ while(true){
 switch(select)
 {
 case 1:
-checkbalance();
+checkbalance(x);
 break;
 
 case 2:
-withdraw();
+withdraw(x);
 break;
 
 
@@ -181,12 +168,12 @@ cout<<"You Want To Make Another Transaction?"<<endl<<"1. Yes    2. No"<<endl;
 cin>>o;
 
 
+
+
 if (o==1){continue;}
 
 else
 break;
 }
-
+    }
 }
-
-
