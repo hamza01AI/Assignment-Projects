@@ -190,3 +190,75 @@ break;
 }
 
 
+struct AccountData{
+
+    string name;
+    int balance;
+    int pin;
+}
+
+vector <AccountData> data;
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <vector>
+using namespace std;
+
+struct Accdata{
+string name;
+int password;
+int balance;
+}
+
+// To Store Data Of The account holders
+void inputdata(vector<Accdata>& Data) //call by refrence 
+{
+    Accdata temp;
+    int choice;
+    do
+    { cout<<"Enter Account Holder Name"<<endl;
+    
+        getline(cin,temp.name);
+        cout<<"Enter Numeric pin"<<endl;
+        cin>>temp.password;
+        
+        cout<<"Enter The Current Balance Of this Account Holder"<<endl<<endl;
+        cin>>temp.balance;
+
+        Data.push_back(temp);
+
+        cout<<"User Added Successfully"<<endl;
+        cout<<"Enter another username \n 1.Yes    2.NO"<<endl;
+        
+        cin>>choice;
+
+    
+    } while (choice==1);
+    
+}
+//UI BACKEND
+
+//To get Username 
+int input(vector<Accdata> Data)
+{
+    string name;
+    int pin;
+
+    cout<<"Enter Account Holder Name";
+    getline(cin,name);
+    cout<<"Enter Pin";
+    cin>>pin;
+}
