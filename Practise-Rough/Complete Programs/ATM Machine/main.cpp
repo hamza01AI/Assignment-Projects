@@ -4,6 +4,7 @@
 using namespace std;
 
 struct Accdata{
+    int accountNumber;
     string name;
     int password;
     int balance;
@@ -18,6 +19,8 @@ void inputdata(vector<Accdata>& Data, int& count)
     
     do
     { 
+        temp.accountNumber = 1000 + count;
+        
         cout << "Enter Account Holder Name: ";
         getline(cin, temp.name);
         
@@ -30,9 +33,13 @@ void inputdata(vector<Accdata>& Data, int& count)
         Data.push_back(temp);
         count++;
 
-        cout << "\nUser Added Successfully" << endl;
-        cout << "Enter another username \n 1.Yes    2.NO\n";
+        cout << "\n====================================" << endl;
+        cout << "User Added Successfully!" << endl;
+        cout << "Account Number: " << temp.accountNumber << endl;
+        cout << "Account Holder: " << temp.name << endl;
+        cout << "====================================" << endl;
         
+        cout << "\nAdd another account? \n 1.Yes    2.No\n";
         cin >> choice;
         cin.ignore();
     
@@ -42,11 +49,11 @@ void inputdata(vector<Accdata>& Data, int& count)
     cin.get();
 }
 
-int findacc(string name, const vector<Accdata>& Data)
+int findacc(int accountNumber, const vector<Accdata>& Data)
 {
     for(int i = 0; i < Data.size(); i++)
     {
-        if(name == Data[i].name)
+        if(accountNumber == Data[i].accountNumber)
         {
             return i;
         }
@@ -56,19 +63,20 @@ int findacc(string name, const vector<Accdata>& Data)
 
 int input(vector<Accdata>& Data)
 {
-    string name;
+    int accountNumber;
     int pin;
 
-    cin.ignore();
-    cout << "Enter Account Holder Name: ";
-    getline(cin, name);
+    cout << "\nEnter Account Number: ";
+    cin >> accountNumber;
     
-    int accindex = findacc(name, Data);
+    int accindex = findacc(accountNumber, Data);
     if(accindex == -1)
     {
-        cout << "Account Name Not Found" << endl;
+        cout << "Account Number Not Found" << endl;
         return -1;
     }
+    
+    cout << "Account Holder: " << Data[accindex].name << endl;
     
     int attempts = 0;
     do
@@ -100,8 +108,11 @@ void clearScreen() {
 }
 
 void checkbalance(int n, const vector<Accdata>& Data) {
-    cout << "\nAccount Holder Name: " << Data[n].name 
-         << "\nBalance: $" << Data[n].balance << "\n";
+    cout << "\n====================================" << endl;
+    cout << "Account Number: " << Data[n].accountNumber << endl;
+    cout << "Account Holder: " << Data[n].name << endl;
+    cout << "Balance: $" << Data[n].balance << endl;
+    cout << "====================================" << endl;
 }
 
 void withdraw(int n, vector<Accdata>& Data) {
@@ -181,6 +192,7 @@ int main() {
         int accountIndex = input(Data);
         
         if(accountIndex == -1) {
+            cin.ignore();
             cin.get();
             continue;
         }
