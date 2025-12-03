@@ -26,7 +26,10 @@ void booking(){
         if (row >= 1 && row <= rows && col >= 1 && col <= cols){
             if (cinema[row - 1][col - 1] == 'F'){
                 cinema[row - 1][col - 1] = 'R';
-                cout << "You have successfully reserved " << row << "-" << col << endl; 
+                cout << "You have successfully reserved " << row << "-" << col << endl;
+                cout << "\nUpdated Seat Map:\n" << endl;
+                menu();
+                cout << endl;
             }else{
                 cout << "Seat Not Available For " << row << "-" << col << endl; 
             }
@@ -57,8 +60,12 @@ int main() {
         }
     }
     
+    cout << "\nInitial Seat Map:\n" << endl;
     menu();
+    cout << endl;
     booking();
+    
+    cout << "\nFinal Seat Map:\n" << endl;
     newmenu();
     
     return 0;
